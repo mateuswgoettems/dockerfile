@@ -1,0 +1,18 @@
+version: '3'
+services:
+  postgres:
+    container_name: $CONTAINER_NAME
+    restart: always
+    image: postgres:latest
+    networks:
+      - $CONTAINER_NETWORK
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=$PG_USER
+      - POSTGRES_PASSWORD=$PG_PASSWD
+      - POSTGRES_DB=$PG_DATABASE
+    volumes:
+      - ../$PG_PATH/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
