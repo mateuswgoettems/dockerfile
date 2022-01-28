@@ -5,8 +5,8 @@ services:
     restart: always
     image: mariadb
     environment:
-      - MARIADB_ROOT_PASSWORD=IrishCoffe@21
-      - MARIADB_DATABASE=production
+      - MARIADB_ROOT_PASSWORD=$MARIADB_ROOT_PASSWORD
+      - MARIADB_DATABASE=MARIADB_DATABASE
     volumes:
       - ./mariadb:/var/lib/mysql
     ports:
