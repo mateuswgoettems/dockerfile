@@ -1,0 +1,13 @@
+version: "3"
+services:
+  mariadb:
+    container_name: mariadb
+    restart: always
+    image: mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=IrishCoffe@21
+      - MARIADB_DATABASE=production
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    ports:
+      - "3305:3306"
